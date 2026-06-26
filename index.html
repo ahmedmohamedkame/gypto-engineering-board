@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>GYPTO Engineering Management Board V16 CAPA Quality Safety</title>
+<style>
+:root{--bg:#eef6f7;--panel:#fff;--ink:#142033;--muted:#64748b;--line:#d9e6ec;--brand:#07393b;--brand2:#0f766e;--blue:#2563eb;--ok:#16a34a;--warn:#d97706;--danger:#dc2626;--violet:#7c3aed;--shadow:0 16px 35px rgba(15,23,42,.10);--r:18px;--side:310px}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 85% 0,#c7f0ec 0,transparent 35rem),var(--bg);font-family:Segoe UI,Tahoma,Arial,sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}.app{display:grid;grid-template-columns:var(--side) minmax(0,1fr);min-height:100vh}.side{background:linear-gradient(180deg,#04383a,#062a2d);color:#eafffb;height:100vh;position:sticky;top:0;overflow:auto;padding:14px}.brand{display:flex;gap:12px;align-items:center;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14);margin-bottom:12px}.brand img{width:138px;max-height:62px;background:#fff;border-radius:12px;padding:6px;object-fit:contain}.brand b{display:block;font-size:15px}.brand span{display:block;color:#9cf4e7;font-weight:800;font-size:12px;margin-top:4px}.version{display:inline-flex!important;color:#1e3a8a!important;background:#dbeafe;border-radius:999px;padding:5px 10px;margin-top:8px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#d8fff8;text-align:left;border-radius:14px;padding:11px 10px;display:flex;justify-content:space-between;gap:10px;font-weight:850;cursor:pointer}.nav button.active,.nav button:hover{background:rgba(255,255,255,.13);color:#fff}.nav small{background:rgba(255,255,255,.16);border-radius:999px;padding:3px 8px}.sep{height:1px;background:rgba(255,255,255,.13);margin:12px 0}.top{position:sticky;top:0;z-index:10;background:rgba(238,246,247,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:13px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}.title h1{margin:0;font-size:24px}.title p{margin:3px 0 0;color:var(--muted)}.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 13px;font-weight:850;cursor:pointer;box-shadow:0 6px 16px rgba(15,23,42,.04)}.btn.primary{background:linear-gradient(135deg,var(--brand2),#075985);color:#fff;border:0}.btn.danger{color:#991b1b;background:#fff1f2;border-color:#fecdd3}.btn.warn{background:#fffbeb;color:#92400e;border-color:#fde68a}.btn:disabled{opacity:.45;cursor:not-allowed}.content{padding:22px;max-width:1640px;margin:auto}.hero{background:linear-gradient(135deg,#0f766e,#0b4660);color:#fff;border-radius:26px;box-shadow:var(--shadow);padding:24px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);gap:18px}.hero h2{font-size:32px;margin:0 0 8px}.hero p{color:#d7fffb;margin:0;line-height:1.55}.hero-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:16px}.badge{display:inline-flex;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);padding:6px 11px;margin-bottom:10px;font-weight:850}.grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-top:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 10px 25px rgba(15,23,42,.05);padding:18px}.card h3{margin:0 0 10px}.label{font-weight:850;color:#64748b}.num{font-size:34px;font-weight:950;margin-top:6px}.hint{font-size:12px;color:#64748b;margin-top:4px}.two{grid-template-columns:minmax(0,1fr) 390px;margin-top:16px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px}.filters{display:grid;grid-template-columns:minmax(270px,1fr) 170px 170px 210px;gap:8px;align-items:center}.search{min-width:min(100%,360px)}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:12px;padding:11px 12px;background:#fff}.field label{display:block;font-weight:850;color:#475569;margin:0 0 6px;font-size:13px}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field.full{grid-column:1/-1}.pill{display:inline-flex;border-radius:999px;padding:5px 9px;font-weight:850;font-size:12px;white-space:nowrap;background:#eef2ff;color:#3730a3}.pill.ok{background:#dcfce7;color:#166534}.pill.warn{background:#fef3c7;color:#92400e}.pill.danger{background:#fee2e2;color:#991b1b}.pill.gray{background:#f1f5f9;color:#334155}.pill.info{background:#dbeafe;color:#1e40af}.pill.violet{background:#ede9fe;color:#5b21b6}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:#fff}table{border-collapse:collapse;width:100%;min-width:1200px}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f8fafc;color:#475569;text-transform:uppercase;letter-spacing:.04em;font-size:12px;position:sticky;top:0}td{font-size:14px}tr:hover td{background:#fbfdff}.row-actions{display:flex;gap:6px;flex-wrap:wrap}.iconbtn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:7px 9px;font-weight:850;cursor:pointer}.progress{height:10px;background:#e2e8f0;border-radius:99px;overflow:hidden;min-width:90px}.progress span{display:block;height:100%;background:linear-gradient(90deg,var(--brand2),#38bdf8)}.modal-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.55);display:flex;align-items:center;justify-content:center;padding:16px;z-index:50}.modal{background:#fff;border-radius:24px;box-shadow:var(--shadow);width:min(980px,100%);max-height:90vh;overflow:auto;padding:22px}.hidden{display:none!important}.mobile-menu{display:inline-flex;align-items:center;gap:6px}.app.side-collapsed{grid-template-columns:0 minmax(0,1fr)}.app.side-collapsed .side{width:0;padding:0;overflow:hidden;transform:translateX(-105%);border:0}.app.side-collapsed .main{min-width:0}.notice{border-left:4px solid #0f766e;background:#f8fafc;border-radius:14px;padding:12px;margin-bottom:10px}.notice b{display:block}.notice span{color:#64748b;font-size:13px}.setup-code{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:14px;overflow:auto;font-family:Consolas,monospace;font-size:13px;line-height:1.5}.small{font-size:13px;color:#64748b}.userbox{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.link{color:#0f766e;font-weight:850;cursor:pointer}.toast{position:fixed;right:16px;bottom:16px;background:#0f172a;color:#fff;padding:12px 14px;border-radius:14px;box-shadow:var(--shadow);z-index:80;max-width:420px}.audit-json{white-space:pre-wrap;font-size:12px;color:#475569;max-width:420px}.area-bars{display:grid;gap:13px}.barrow{display:grid;grid-template-columns:110px 1fr 40px;gap:12px;align-items:center}.bar{height:12px;background:#e2e8f0;border-radius:99px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,#0f766e,#38bdf8)}.oee-box{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}.mini{background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px}.mini b{display:block;font-size:20px}.loader{display:inline-block;width:14px;height:14px;border:2px solid #cbd5e1;border-top-color:#0f766e;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:1050px){.app{grid-template-columns:1fr}.side{display:none;position:fixed;inset:0 auto 0 0;width:310px;z-index:40}.side.open{display:block}.mobile-menu{display:inline-flex}.top{padding:11px 13px}.content{padding:14px}.hero,.kpis,.two,.filters,.oee-box{grid-template-columns:1fr}.hero h2{font-size:25px}.form-grid{grid-template-columns:1fr}.brand img{width:125px}.title h1{font-size:19px}.actions .btn{padding:9px 10px}}
+@media print{.side,.top,.toolbar,.modal-backdrop{display:none!important}.app{display:block}.content{padding:0}.card,.hero{box-shadow:none;break-inside:avoid}.hero{background:#fff;color:#111;border:1px solid #ddd}.hero p{color:#333}.tablewrap{overflow:visible}table{min-width:0;font-size:11px}th,td{padding:7px}}
+</style>
+<script src="config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="side" id="side">
+    <div class="brand"><img src="assets/gypto_logo.png" alt="GYPTO Pharma"><div><b>Engineering System</b></div></div>
+    <div class="nav" id="nav"></div>
+  </aside>
+  <main class="main">
+    <header class="top">
+      <button class="btn mobile-menu" id="menuToggleBtn" onclick="toggleSide()">☰ Menu</button>
+      <div class="title"><h1 id="pageTitle">Dashboard</h1><p id="pageSub">Engineering governance, maintenance, projects, safety, CCR, CAPA and OEE.</p></div>
+      <div class="actions" id="topActions"></div>
+    </header>
+    <section class="content" id="view"></section>
+  </main>
+</div>
+<div id="modalBackdrop" class="modal-backdrop hidden"><div id="modal" class="modal"></div></div>
+<div id="toast" class="toast hidden"></div>
+<script>
+const cfg=window.GYPTO_CONFIG||{};let sb=null,session=null,currentUser=null,myProfile=null;
+let profiles=[],records=[],oeeRecords=[],auditLogs=[],notifications=[],page=(new URLSearchParams(location.search).get('page')||location.hash.replace('#','')||'dashboard');
+let filters={q:'',area:'All',status:'All',owner:'All'};
+const areas=["Sterile", "Non-Sterile", "Electrical", "Utility", "Facility", "HVAC", "Water Treatment", "Purified Water", "Compressed Air", "Boiler", "Chiller", "Fire Fighting", "Civil / Building", "Warehouse", "QC Lab", "QA", "Production", "Packaging", "Admin Building", "External Area", "Planning", "Accounts", "Purchasing", "Engineering Management", "Maintenance Planning", "Production Planning"];
+const roles=['viewer','engineer','supervisor','manager','admin'];
+const priorities=['Low','Medium','High','Critical'];
+const commonStatuses=['Open','In Progress','Waiting Review','Approved / Closed','Rejected','On Hold','Cancelled','Completed','Delayed','Closed'];
+const modules={
+ dashboard:{label:'🏠 Dashboard',sub:'Live summary across the Engineering Department.'},
+ notifications:{label:'🔔 Notifications',sub:'Automatic notifications for assigned Actions, CCRs, CAPAs and due dates.'},
+ engineer_actions:{label:'✅ Engineer Actions',title:'Engineer Actions',sub:'Create, assign, follow up, close and approve engineer actions.',statuses:['Open','In Progress','Waiting Review','Approved / Closed','Rejected','On Hold','Cancelled'],extras:[['action_source','Action Source','select',['Meeting','Audit','Breakdown','PM','Safety','CCR','CAPA','Project','Management Request','Other']],['related_machine','Related Machine / System','text'],['reviewer','Reviewer / Approver','text']]},
+ training_matrix:{label:'🎓 Training Matrix',title:'Training Matrix',sub:'Engineering training plan, due dates, completion and evidence.',statuses:['Pending','Completed','Expired','Overdue','Cancelled'],extras:[['employee_name','Employee Name','text'],['training_name','Training Name','text'],['training_type','Training Type','select',['GMP','SOP','Safety','Technical','Machine-Specific','Compliance']],['renewal_date','Next Renewal Date','date']]},
+ maintenance_planning:{label:'🧰 Maintenance Planning',title:'Maintenance Planning',sub:'PM plans by Sterile, Non-Sterile, Electrical and Utility.',statuses:['Planned','Due','Done','Overdue','Cancelled'],extras:[['pm_type','PM Type','select',['Weekly PM','Monthly PM','Quarterly PM','Annual PM','Calibration','Inspection']],['frequency','Frequency','select',['Weekly','Monthly','Quarterly','Semi-Annual','Annual']],['next_pm_date','Next PM Date','date'],['pm_compliance','PM Compliance %','number']]},
+ facility_board:{label:'🏢 Facility Board',title:'Facility Board',sub:'Facility requests, civil works, HVAC, utilities support, vendors and site services follow-up.',statuses:['Requested','Planned','In Progress','Waiting Vendor','Waiting Approval','Completed','Closed','Cancelled','Overdue'],extras:[['facility_type','Facility Type','select',['HVAC','Civil / Building','Plumbing','Fire Fighting','Pest Control','Housekeeping','Compressed Air','Water System','Electrical Room','Other']],['location','Location','text'],['work_type','Work Type','select',['Inspection','Preventive','Corrective','Improvement','Breakdown','Request','Contractor Visit']],['service_provider','Service Provider / Contractor','text'],['compliance_impact','Compliance Impact','select',['None','Low','Medium','High','Critical']]]},
+ spare_parts:{label:'📦 Spare Parts',title:'Spare Parts',sub:'Track engineering spare parts, min/max stock, suppliers, lead time and machine linkage.',statuses:['Available','Low Stock','Out of Stock','Requested','Ordered','Received','Issued','Obsolete','Blocked'],extras:[['part_code','Part Code','text'],['part_name','Part Name','text'],['related_machine_spare','Related Machine / System','text'],['store_location','Store Location','text'],['current_stock','Current Stock','number'],['min_stock','Minimum Stock','number'],['max_stock','Maximum Stock','number'],['unit','Unit','select',['pcs','box','set','meter','liter','kg','roll','pack','other']],['supplier','Supplier','text'],['lead_time_days','Lead Time Days','number'],['spare_criticality','Criticality','select',['Low','Medium','High','Critical']]]},
+ projects_tracker:{label:'🏗️ Projects Tracker',title:'Projects Tracker',sub:'Engineering projects, CAPEX, owners, progress, risks and blockers.',statuses:['Not Started','In Progress','On Track','Delayed','On Hold','Completed','Cancelled'],extras:[['project_owner','Project Owner','text'],['budget','Budget','number'],['risk_level','Risk Level','select',['Low','Medium','High','Critical']],['next_action','Next Action','text']]},
+ budget_tracker:{label:'💰 Budget Tracker',title:'Budget Tracker',sub:'Follow CAPEX/OPEX budgets, committed cost, actual cost, remaining balance, PR/PO and vendor status.',statuses:['Draft','Submitted','Approved','PR Raised','PO Issued','Partially Used','Fully Used','On Hold','Rejected','Closed'],extras:[['budget_year','Budget Year','number'],['cost_center','Cost Center','text'],['budget_type','Budget Type','select',['CAPEX','OPEX','Maintenance','Utility','Spare Parts','Projects','Contractor','Other']],['planned_budget','Planned Budget','number'],['committed_cost','Committed Cost','number'],['actual_cost','Actual Cost','number'],['remaining_budget','Remaining Budget','number'],['po_pr_no','PR / PO Number','text'],['vendor','Vendor / Supplier','text']]},
+ recognition_board:{label:'🏆 Recognition Board',title:'Recognition Board',sub:'Recognize employees by name, department, achievement, impact and recognition type.',statuses:['Draft','Submitted','Approved','Published','Archived','Cancelled'],extras:[['employee_name','Employee Name','text'],['employee_department','Department / Management','select',areas],['achievement','What did the person do?','text'],['recognition_type','Recognition Type','select',['Safety','Quality','Productivity','Cost Saving','Innovation','Maintenance Excellence','Compliance','Teamwork','Leadership','Customer Support','Other']],['recognition_date','Recognition Date','date'],['recognized_by','Recognized By','text'],['impact_result','Impact / Result','text'],['award_level','Award Level','select',['Thank You','Monthly Recognition','Quarterly Recognition','Management Recognition','Special Award']]]},
+ safety_board:{label:'🚧 Safety Board',title:'Safety Board',sub:'Safety observations, engineering safety actions, PTW, LOTO and contractor safety.',statuses:['Open','In Progress','Closed','Overdue','Cancelled'],extras:[['observation_type','Observation Type','select',['Unsafe Condition','Unsafe Act','Near Miss','PTW','LOTO','Hot Work','Contractor Safety']],['risk_level','Risk Level','select',['Low','Medium','High','Critical']],['before_after','Before / After Evidence','text']]},
+ ccr_tracker:{label:'🔄 CCR Tracker',title:'CCR Tracker',sub:'Engineering Change Control Requests and implementation actions.',statuses:['Draft','Under Review','Approved','Implementation','QA Closure','Closed','Delayed'],extras:[['ccr_no','CCR Number','text'],['change_reason','Reason for Change','text'],['impact_assessment','Impact Assessment','text'],['qa_status','QA Status','select',['Pending','Under Review','Approved','Rejected','Closed']]]},
+ capa_tracker:{label:'📌 CAPA Tracker',title:'CAPA Tracker',sub:'Corrective and preventive actions divided into Quality CAPA and Safety CAPA with owner, due date, progress, closure and evidence.',statuses:['Open','In Progress','Waiting Review','Closed','Overdue','Cancelled'],extras:[['capa_type','CAPA Type','select',['Quality CAPA','Safety CAPA']],['source_department','Source Department','select',areas],['root_cause','Root Cause','text'],['corrective_action','Corrective Action','text'],['preventive_action','Preventive Action','text'],['effectiveness_check','Effectiveness Check','text']]},
+ equipment_register:{label:'🏭 Equipment Register',title:'Equipment Register',sub:'Equipment master data linked to engineering actions and performance.',statuses:['Active','Inactive','Under Maintenance','Decommissioned'],extras:[['asset_code','Asset Code','text'],['machine_name','Machine Name','text'],['serial_no','Serial Number','text'],['location','Location','text'],['criticality','Criticality','select',['Low','Medium','High','Critical']]]},
+ machine_oee:{label:'📈 Machine Performance & OEE',title:'Machine Performance & OEE',sub:'Availability, Performance, Quality and OEE records.'},
+ user_approvals:{label:'✅ User Approvals',sub:'Approve or reject new user signups.'},
+ users:{label:'👥 Users & Roles',sub:'Manage user roles and activation.'},
+ audit:{label:'🧾 Audit Trail',sub:'Track database changes.'},
+ setup:{label:'⚙️ Setup Guide',sub:'V5 database patch and setup guide.'}
+};
+const navOrder=['dashboard','notifications','engineer_actions','training_matrix','maintenance_planning','facility_board','spare_parts','projects_tracker','budget_tracker','recognition_board','safety_board','ccr_tracker','capa_tracker','equipment_register','machine_oee','user_approvals','users','audit','setup'];
+const esc=v=>String(v??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]));
+const byId=id=>document.getElementById(id);const today=()=>new Date().toISOString().slice(0,10);const dateOnly=v=>v?String(v).slice(0,10):'';
+const canEdit=()=>['engineer','supervisor','manager','admin'].includes(myProfile?.role)&&isApproved();const canApprove=()=>['supervisor','manager','admin'].includes(myProfile?.role)&&isApproved();const isAdmin=()=>myProfile?.role==='admin'&&isApproved();const isApproved=()=>myProfile?.approval_status==='approved'||myProfile?.approval_status===undefined;const isPendingApproval=()=>myProfile?.approval_status&&myProfile.approval_status!=='approved';
+function toast(msg){const el=byId('toast');el.textContent=msg;el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),3500)}
+
+function toggleSide(){
+  const app=byId('app');
+  const side=byId('side');
+  const isMobile=window.matchMedia('(max-width:1050px)').matches;
+  if(isMobile){
+    side.classList.toggle('open');
+    return;
+  }
+  app.classList.toggle('side-collapsed');
+  localStorage.setItem('gypto_sidebar_collapsed', app.classList.contains('side-collapsed') ? '1' : '0');
+}
+function closeSide(){
+  byId('side').classList.remove('open');
+}
+function hideSideAfterMenuSelection(){
+  const app=byId('app');
+  const side=byId('side');
+  const isMobile=window.matchMedia('(max-width:1050px)').matches;
+  if(isMobile){
+    side.classList.remove('open');
+    return;
+  }
+  app.classList.add('side-collapsed');
+  localStorage.setItem('gypto_sidebar_collapsed','1');
+}
+function navGo(k){
+  page=k;
+  hideSideAfterMenuSelection();
+  render();
+}
+function applySidebarPreference(){
+  const app=byId('app');
+  if(!app) return;
+  const isMobile=window.matchMedia('(max-width:1050px)').matches;
+  if(isMobile){
+    app.classList.remove('side-collapsed');
+    byId('side').classList.remove('open');
+    return;
+  }
+  if(localStorage.getItem('gypto_sidebar_collapsed')==='1'){
+    app.classList.add('side-collapsed');
+  }
+}
+window.addEventListener('resize', applySidebarPreference);
+
+function setTitle(t,s){byId('pageTitle').textContent=t;byId('pageSub').textContent=s||'';setTopActions()}
+function unreadCount(){return notifications.filter(n=>!n.is_read).length}
+function setTopActions(){byId('topActions').innerHTML=session?`<div class="userbox"><button class="btn" onclick="go('notifications')">🔔 Notifications (${unreadCount()})</button><span class="pill ${roleClass(myProfile?.role)}">${esc(myProfile?.role||'viewer')}</span><span class="small">${esc(myProfile?.full_name||currentUser?.email||'')}</span><button class="btn" onclick="loadAll()">Refresh</button><button class="btn" onclick="window.print()">Print / PDF</button><button class="btn danger" onclick="logout()">Logout</button></div>`:''}
+function roleClass(r){return r==='admin'?'danger':r==='manager'?'violet':r==='supervisor'?'warn':r==='engineer'?'ok':'gray'}
+function pillClass(v){if(['Closed','Completed','Approved / Closed','Active','Done','On Track','approved'].includes(v))return'ok';if(['Delayed','Overdue','Expired','Critical','Rejected','rejected'].includes(v))return'danger';if(['Waiting Review','Due','Under Review','Implementation','On Hold','pending'].includes(v))return'warn';return'info'}
+function pill(v){return `<span class="pill ${pillClass(v)}">${esc(v||'-')}</span>`}
+function profileName(id){const p=profiles.find(x=>x.user_id===id);return p?.full_name||p?.email||'Unassigned'}
+function initNav(){const visible=navOrder.filter(k=>k!=='user_approvals'||isAdmin());byId('nav').innerHTML=visible.map(k=>{const count=countNav(k);return `${k==='user_approvals'||k==='setup'?'<div class="sep"></div>':''}<button data-page="${k}" class="${page===k?'active':''}" onclick="navGo('${k}')"><span>${modules[k].label}</span><small>${count}</small></button>`}).join('')}
+function countNav(k){if(k==='dashboard')return records.length+oeeRecords.length;if(k==='notifications')return unreadCount();if(k==='user_approvals')return profiles.filter(p=>(p.approval_status||'pending')==='pending').length;if(k==='users')return profiles.length;if(k==='audit')return auditLogs.length;if(k==='machine_oee')return oeeRecords.length;if(k==='setup')return'SQL';return records.filter(r=>r.module===k).length}
+function go(k){page=k;closeSide();render()}
+applySidebarPreference();
+async function init(){initNav(); if(!cfg.SUPABASE_URL||!cfg.SUPABASE_KEY){renderSetup(true);return} sb=window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_KEY); const {data}=await sb.auth.getSession(); session=data.session; currentUser=session?.user||null; if(!session){renderLogin();return} await loadAll()}
+async function loadAll(){try{if(!sb)return; const {data:{user}}=await sb.auth.getUser(); currentUser=user; session=user?{user}:null; if(!user){renderLogin();return} let pr=await sb.from('profiles').select('*').order('full_name'); if(pr.error)throw pr.error; profiles=pr.data||[]; myProfile=profiles.find(p=>p.user_id===user.id)||profiles.find(p=>p.email===user.email)||{email:user.email,role:'viewer',full_name:user.email,approval_status:'pending'}; if(isPendingApproval()){records=[];oeeRecords=[];notifications=[];auditLogs=[];initNav();renderPendingApproval();return} let er=await sb.from('engineering_records').select('*').order('created_at',{ascending:false}); if(er.error)throw er.error; records=er.data||[]; let nf=await sb.from('engineering_notifications').select('*').order('created_at',{ascending:false}).limit(200); if(nf.error)throw nf.error; notifications=nf.data||[]; let oe=await sb.from('machine_oee_records').select('*').order('record_date',{ascending:false}); if(oe.error)throw oe.error; oeeRecords=oe.data||[]; if(canApprove()){let au=await sb.from('engineering_audit_log').select('*').order('changed_at',{ascending:false}).limit(200); auditLogs=au.data||[]} else auditLogs=[]; initNav();render()}catch(e){renderError(e)}}
+function renderError(e){setTitle('System Error','Check V5 SQL patch, database schema, RLS policies or internet connection.');byId('view').innerHTML=`<div class="card"><h3>Could not load system data</h3><p class="small">${esc(e.message||e)}</p><button class="btn primary" onclick="loadAll()">Try again</button><button class="btn" onclick="go('setup')">Open Setup Guide</button></div>`}
+function renderLogin(){byId('topActions').innerHTML='';setTitle('Login','Use your company user to access the Engineering System.');byId('view').innerHTML=`<div class="hero"><div><span class="badge">System Database Connected</span><h2>GYPTO Engineering Management Board</h2><p>Full Engineering board with shared database, roles, audit trail, actions, maintenance, facility, spare parts, budget, recognition, training, projects, safety, CCR, CAPA, equipment and OEE.</p></div><div class="hero-card"><b>First time?</b><p>Create your account, then wait for Admin approval before accessing system data.</p></div></div><div class="card" style="max-width:820px;margin-top:18px"><h3>Login</h3><div class="form-grid"><div class="field full"><label>Email</label><input id="login_email" type="email"></div><div class="field full"><label>Password</label><input id="login_pass" type="password"></div></div><div class="actions" style="justify-content:flex-start;margin-top:14px"><button class="btn primary" onclick="login()">Login</button><button class="btn" onclick="signup()">Create account</button><button class="btn" onclick="resetPassword()">Reset password</button></div><p class="small">New accounts remain pending until Admin approval. Approved users get viewer / engineer / supervisor / manager / admin role.</p></div>`}
+async function login(){try{const email=byId('login_email').value.trim(), password=byId('login_pass').value;const {error}=await sb.auth.signInWithPassword({email,password});if(error)throw error;await loadAll()}catch(e){toast(e.message)}}
+async function signup(){try{const email=byId('login_email').value.trim(), password=byId('login_pass').value;if(!email||!password)return toast('Enter email and password first');const {error}=await sb.auth.signUp({email,password,options:{data:{full_name:email.split('@')[0]}}});if(error)throw error;toast('Account created. Waiting for Admin approval.');await login()}catch(e){toast(e.message)}}
+async function resetPassword(){const email=byId('login_email').value.trim();if(!email)return toast('Enter email first');const {error}=await sb.auth.resetPasswordForEmail(email);toast(error?error.message:'Password reset email sent')}
+async function logout(){await sb.auth.signOut();session=null;currentUser=null;myProfile=null;renderLogin()}
+function render(){initNav(); if(isPendingApproval())return renderPendingApproval(); if(page==='dashboard')return renderDashboard(); if(page==='notifications')return renderNotifications(); if(page==='machine_oee')return renderOee(); if(page==='user_approvals')return renderUserApprovals(); if(page==='users')return renderUsers(); if(page==='audit')return renderAudit(); if(page==='setup')return renderSetup(false); if(page==='recognition_board')return renderRecognitionBoard(); if(page==='capa_tracker')return renderCapaTracker(); return renderModule(page)}
+function renderDashboard(){setTitle('Engineering Dashboard','Live summary from shared database.');const open=records.filter(r=>!['Closed','Completed','Approved / Closed','Cancelled','Rejected'].includes(r.status));const overdue=open.filter(r=>r.target_date&&dateOnly(r.target_date)<today());const waiting=records.filter(r=>r.status==='Waiting Review'||r.status==='Under Review'||r.status==='Waiting Effectiveness');const avgOee=oeeRecords.length?Math.round(oeeRecords.reduce((a,b)=>a+Number(b.oee||0),0)/oeeRecords.length):0;byId('view').innerHTML=`<div class="hero"><div><span class="badge">System Database Connected</span><h2>Engineering Management Board</h2><p>Track actions, trainings, maintenance planning, facility, spare parts, budget, recognition, projects, safety, CCR, CAPA, equipment and machine performance across all engineering areas.</p></div><div class="hero-card"><b>Current User</b><h3>${esc(myProfile?.full_name||currentUser?.email)}</h3><p>${pill(myProfile?.role)} ${esc(myProfile?.discipline||'')}</p></div></div><div class="grid kpis"><div class="card"><div class="label">Total Records</div><div class="num">${records.length}</div><div class="hint">All modules except OEE</div></div><div class="card"><div class="label">Open Records</div><div class="num">${open.length}</div><div class="hint">Not closed / cancelled</div></div><div class="card"><div class="label">Overdue</div><div class="num" style="color:var(--danger)">${overdue.length}</div><div class="hint">Target date passed</div></div><div class="card"><div class="label">Average OEE</div><div class="num" style="color:${avgOee>=70?'var(--ok)':avgOee>=50?'var(--warn)':'var(--danger)'}">${avgOee}%</div><div class="hint">From OEE records</div></div></div><div class="grid two"><div class="card"><h3>Recent Open Items</h3><div class="tablewrap"><table><thead><tr><th>No</th><th>Module</th><th>Title</th><th>Area</th><th>Owner</th><th>Status</th><th>Target</th></tr></thead><tbody>${open.slice(0,10).map(r=>`<tr><td>${esc(r.record_no)}</td><td>${esc(modules[r.module]?.title||modules[r.module]?.label||r.module)}</td><td>${esc(r.title)}</td><td>${pill(r.area)}</td><td>${esc(profileName(r.owner_id))}</td><td>${pill(r.status)}</td><td>${esc(dateOnly(r.target_date))}</td></tr>`).join('')||'<tr><td colspan="7">No open records.</td></tr>'}</tbody></table></div></div><div class="card"><h3>Area Distribution</h3>${areaBars(records)}</div></div><div class="grid kpis">${Object.entries(modules).filter(([k])=>!['dashboard','notifications','users','audit','setup','machine_oee'].includes(k)).map(([k,m])=>`<div class="card" onclick="navGo('${k}')" style="cursor:pointer"><div class="label">${m.label}</div><div class="num">${records.filter(r=>r.module===k).length}</div><div class="hint">Open: ${records.filter(r=>r.module===k&&!['Closed','Completed','Approved / Closed','Cancelled','Rejected'].includes(r.status)).length}</div></div>`).join('')}</div>`}
+function areaBars(list){const max=Math.max(1,...areas.map(a=>list.filter(r=>r.area===a).length));return `<div class="area-bars">${areas.map(a=>{const n=list.filter(r=>r.area===a).length;return `<div class="barrow"><b>${a}</b><div class="bar"><span style="width:${Math.round(n/max*100)}%"></span></div><b>${n}</b></div>`}).join('')}</div>`}
+function filteredRecords(mod){let list=records.filter(r=>r.module===mod);const q=filters.q.toLowerCase();if(q)list=list.filter(r=>[r.record_no,r.title,r.description,r.related_ref,r.source,r.category,JSON.stringify(r.extra||{})].some(x=>String(x||'').toLowerCase().includes(q)));if(filters.area!=='All')list=list.filter(r=>r.area===filters.area);if(filters.status!=='All')list=list.filter(r=>r.status===filters.status);if(filters.owner!=='All')list=list.filter(r=>r.owner_id===filters.owner);return list}
+
+function renderNotifications(){setTitle('Notifications','Automatic notifications for assigned Engineer Actions, CCRs, CAPAs and due/overdue items.');const unread=notifications.filter(n=>!n.is_read);byId('view').innerHTML=`<div class="card"><div class="toolbar"><div><h3>Notification Center</h3><p class="small">Notifications are generated automatically when Action / CCR / CAPA items are assigned, reassigned, status changed, or become due / overdue.</p></div><div class="actions"><button class="btn primary" onclick="generateDueNotifications()">Generate Due Reminders Now</button><button class="btn" onclick="markAllNotificationsRead()">Mark all as read</button><button class="btn" onclick="loadAll()">Refresh</button></div></div><div class="grid kpis"><div class="card"><div class="label">Unread</div><div class="num">${unread.length}</div></div><div class="card"><div class="label">Total Loaded</div><div class="num">${notifications.length}</div></div><div class="card"><div class="label">CCR / CAPA / Actions</div><div class="num">${notifications.filter(n=>['ccr_tracker','capa_tracker','engineer_actions'].includes(n.module)).length}</div></div><div class="card"><div class="label">Overdue / Due</div><div class="num">${notifications.filter(n=>['overdue','due_reminder'].includes(n.event_type)).length}</div></div></div><div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>Status</th><th>Date</th><th>Type</th><th>Assigned / Updated By</th><th>Module</th><th>Title</th><th>Message</th><th>Due Date</th><th>Actions</th></tr></thead><tbody>${notifications.map(n=>`<tr><td>${n.is_read?pill('Read'):pill('New')}</td><td>${new Date(n.created_at).toLocaleString()}</td><td>${pill(n.event_type)}</td><td>${esc(n.actor_name||'-')}</td><td>${esc(modules[n.module]?.label||n.module||'')}</td><td><b>${esc(n.title)}</b></td><td>${esc(n.body||'')}</td><td>${esc(dateOnly(n.due_date))}</td><td><button class="iconbtn" onclick="markNotificationRead('${n.id}')">Mark read</button>${n.related_record_id?`<button class="iconbtn" onclick="openRelatedRecord('${n.related_record_id}')">Open item</button>`:''}</td></tr>`).join('')||'<tr><td colspan="9">No notifications found.</td></tr>'}</tbody></table></div><div class="notice" style="margin-top:14px"><b>Email Automation</b><span>This version creates in-system automatic notifications and an email outbox in Supabase. Actual email sending needs a company SMTP / Resend / Cloudflare Worker secret to be activated.</span></div></div>`}
+async function markNotificationRead(id){try{const {error}=await sb.from('engineering_notifications').update({is_read:true,read_at:new Date().toISOString()}).eq('id',id);if(error)throw error;await loadAll();toast('Notification marked as read')}catch(e){toast(e.message)}}
+async function markAllNotificationsRead(){try{const ids=notifications.filter(n=>!n.is_read).map(n=>n.id);if(!ids.length)return toast('No unread notifications');const {error}=await sb.from('engineering_notifications').update({is_read:true,read_at:new Date().toISOString()}).in('id',ids);if(error)throw error;await loadAll();toast('All notifications marked as read')}catch(e){toast(e.message)}}
+async function generateDueNotifications(){try{const {data,error}=await sb.rpc('generate_due_notifications');if(error)throw error;toast('Due reminders generated: '+(data??0));await loadAll()}catch(e){toast(e.message)}}
+function openRelatedRecord(id){const r=records.find(x=>x.id===id);if(!r)return toast('Related record not loaded');page=r.module;filters.q=r.record_no||r.title||'';render()}
+
+
+
+function capaList(){
+  let list=records.filter(r=>r.module==='capa_tracker');
+  const q=filters.q.toLowerCase();
+  if(q)list=list.filter(r=>{
+    const e=r.extra||{};
+    return [r.record_no,r.title,r.description,r.comments,e.capa_type,e.source_department,e.root_cause,e.corrective_action,e.preventive_action,e.effectiveness_check,r.area].some(x=>String(x||'').toLowerCase().includes(q));
+  });
+  if(filters.area!=='All')list=list.filter(r=>(r.extra?.source_department||r.area)===filters.area);
+  if(filters.status!=='All')list=list.filter(r=>r.status===filters.status);
+  if(filters.owner!=='All')list=list.filter(r=>r.owner_id===filters.owner);
+  return list;
+}
+function renderCapaTracker(){
+  const m=modules.capa_tracker;
+  setTitle('CAPA Tracker','Corrective and preventive actions divided into Quality CAPA and Safety CAPA.');
+  const sts=m.statuses||[];
+  const list=capaList();
+  const quality=list.filter(r=>(r.extra?.capa_type||'')==='Quality CAPA').length;
+  const safety=list.filter(r=>(r.extra?.capa_type||'')==='Safety CAPA').length;
+  byId('view').innerHTML=`<div class="card">
+    <div class="toolbar">
+      <div>
+        <h3>CAPA Tracker</h3>
+        <p class="small">Track CAPAs by type: Quality CAPA or Safety CAPA, with root cause, corrective action, preventive action and effectiveness check.</p>
+      </div>
+      <div class="actions">
+        <button class="btn primary" ${canEdit()?'':'disabled'} onclick="openCapaForm()">+ New CAPA</button>
+        <button class="btn" onclick="exportCapa()">Export CSV</button>
+      </div>
+    </div>
+
+    <div class="grid kpis" style="margin-top:14px">
+      <div class="card"><div class="label">Total CAPAs</div><div class="num">${list.length}</div></div>
+      <div class="card"><div class="label">Quality CAPA</div><div class="num">${quality}</div></div>
+      <div class="card"><div class="label">Safety CAPA</div><div class="num">${safety}</div></div>
+      <div class="card"><div class="label">Open</div><div class="num">${list.filter(r=>!['Closed','Cancelled'].includes(r.status)).length}</div></div>
+    </div>
+
+    <div class="filters" style="margin-top:14px">
+      <input class="search" placeholder="Search CAPA no, title, type, root cause, action..." value="${esc(filters.q)}" oninput="filters.q=this.value;renderCapaTracker()">
+      <select onchange="filters.area=this.value;renderCapaTracker()">
+        <option>All</option>
+        ${areas.map(a=>`<option ${filters.area===a?'selected':''}>${a}</option>`).join('')}
+      </select>
+      <select onchange="filters.status=this.value;renderCapaTracker()">
+        <option>All</option>
+        ${sts.map(s=>`<option ${filters.status===s?'selected':''}>${s}</option>`).join('')}
+      </select>
+      <select onchange="filters.owner=this.value;renderCapaTracker()">
+        <option value="All">All owners</option>
+        ${users.map(u=>`<option value="${u.user_id}" ${filters.owner===u.user_id?'selected':''}>${esc(u.full_name||u.email)}</option>`).join('')}
+      </select>
+    </div>
+
+    <div class="tablewrap" style="margin-top:14px">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>CAPA Type</th>
+            <th>Title</th>
+            <th>Source Department</th>
+            <th>Owner</th>
+            <th>Root Cause</th>
+            <th>Corrective Action</th>
+            <th>Preventive Action</th>
+            <th>Effectiveness Check</th>
+            <th>Status</th>
+            <th>Target</th>
+            <th>Evidence</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>${list.map(capaRow).join('')||'<tr><td colspan="13">No CAPA records found.</td></tr>'}</tbody>
+      </table>
+    </div>
+  </div>`;
+}
+function capaRow(r){
+  const e=r.extra||{};
+  return `<tr>
+    <td>${esc(r.record_no)}</td>
+    <td>${pill(e.capa_type||'-')}</td>
+    <td><b>${esc(r.title||'-')}</b></td>
+    <td>${pill(e.source_department||r.area||'-')}</td>
+    <td>${esc(nameById(r.owner_id)||'Unassigned')}</td>
+    <td>${esc(e.root_cause||'-')}</td>
+    <td>${esc(e.corrective_action||'-')}</td>
+    <td>${esc(e.preventive_action||'-')}</td>
+    <td>${esc(e.effectiveness_check||'-')}</td>
+    <td>${pill(r.status||'-')}</td>
+    <td>${esc(dateOnly(r.target_date)||'-')}</td>
+    <td>${r.evidence_url?`<a class="link" target="_blank" href="${esc(r.evidence_url)}">Open</a>`:'-'}</td>
+    <td>
+      <div class="row-actions">
+        <button class="iconbtn" onclick="viewCapa('${r.id}')">View</button>
+        <button class="iconbtn" ${canEdit()?'':'disabled'} onclick="openCapaForm('${r.id}')">Edit</button>
+        ${isAdmin()?`<button class="iconbtn" onclick="deleteRecord('${r.id}')">Delete</button>`:''}
+      </div>
+    </td>
+  </tr>`;
+}
+function openCapaForm(id=''){
+  const r=id?records.find(x=>x.id===id):{};
+  const e=r?.extra||{};
+  const sts=modules.capa_tracker.statuses;
+  openModal(`<h3>${id?'Edit':'New'} CAPA</h3>
+    <div class="form-grid">
+      <div class="field"><label>CAPA Type</label><select id="capa_type"><option></option>${['Quality CAPA','Safety CAPA'].map(x=>`<option ${e.capa_type===x?'selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label>Source Department</label><select id="capa_source_department"><option></option>${areas.map(a=>`<option ${e.source_department===a||r.area===a?'selected':''}>${a}</option>`).join('')}</select></div>
+      <div class="field full"><label>CAPA Title</label><input id="capa_title" value="${esc(r.title||'')}" placeholder="Short CAPA title"></div>
+      <div class="field"><label>Owner</label><select id="capa_owner"><option value="">Unassigned</option>${users.map(u=>`<option value="${u.user_id}" ${r.owner_id===u.user_id?'selected':''}>${esc(u.full_name||u.email)}</option>`).join('')}</select></div>
+      <div class="field"><label>Status</label><select id="capa_status">${sts.map(s=>`<option ${r.status===s?'selected':''}>${s}</option>`).join('')}</select></div>
+      <div class="field"><label>Priority</label><select id="capa_priority">${['Low','Medium','High','Critical'].map(x=>`<option ${r.priority===x?'selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label>Start Date</label><input id="capa_start_date" type="date" value="${esc(dateOnly(r.start_date)||today())}"></div>
+      <div class="field"><label>Target Date</label><input id="capa_target_date" type="date" value="${esc(dateOnly(r.target_date)||'')}"></div>
+      <div class="field"><label>Completion Date</label><input id="capa_completion_date" type="date" value="${esc(dateOnly(r.completion_date)||'')}"></div>
+      <div class="field"><label>Progress %</label><input id="capa_progress" type="number" min="0" max="100" value="${esc(r.progress??0)}"></div>
+      <div class="field full"><label>Root Cause</label><textarea id="capa_root_cause" rows="3">${esc(e.root_cause||'')}</textarea></div>
+      <div class="field full"><label>Corrective Action</label><textarea id="capa_corrective_action" rows="3">${esc(e.corrective_action||'')}</textarea></div>
+      <div class="field full"><label>Preventive Action</label><textarea id="capa_preventive_action" rows="3">${esc(e.preventive_action||'')}</textarea></div>
+      <div class="field full"><label>Effectiveness Check</label><textarea id="capa_effectiveness_check" rows="3">${esc(e.effectiveness_check||'')}</textarea></div>
+      <div class="field full"><label>Evidence URL</label><input id="capa_evidence_url" value="${esc(r.evidence_url||'')}" placeholder="Link to evidence / attachment"></div>
+      <div class="field full"><label>Comments</label><textarea id="capa_comments" rows="3">${esc(r.comments||'')}</textarea></div>
+    </div>
+    <div class="actions" style="margin-top:14px">
+      <button class="btn" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="saveCapa('${id||''}')">Save CAPA</button>
+    </div>`);
+}
+async function saveCapa(id=''){
+  try{
+    const capaType=byId('capa_type').value;
+    const dept=byId('capa_source_department').value;
+    const title=byId('capa_title').value.trim();
+    if(!capaType || !dept || !title){
+      toast('CAPA Type, Source Department and Title are required');
+      return;
+    }
+    const extra={
+      capa_type:capaType,
+      source_department:dept,
+      root_cause:byId('capa_root_cause').value,
+      corrective_action:byId('capa_corrective_action').value,
+      preventive_action:byId('capa_preventive_action').value,
+      effectiveness_check:byId('capa_effectiveness_check').value
+    };
+    const payload={
+      module:'capa_tracker',
+      title:title,
+      description:title,
+      area:dept,
+      priority:byId('capa_priority').value,
+      status:byId('capa_status').value,
+      progress:Number(byId('capa_progress').value||0),
+      owner_id:byId('capa_owner').value||null,
+      start_date:byId('capa_start_date').value||null,
+      target_date:byId('capa_target_date').value||null,
+      completion_date:byId('capa_completion_date').value||null,
+      evidence_url:byId('capa_evidence_url').value,
+      comments:byId('capa_comments').value,
+      extra,
+      created_by:currentUser.id,
+      updated_by:currentUser.id,
+      source:capaType,
+      category:dept,
+      related_ref:capaType+' - '+dept
+    };
+    const res=id?await sb.from('engineering_records').update(payload).eq('id',id):await sb.from('engineering_records').insert(payload);
+    if(res.error)throw res.error;
+    closeModal();
+    toast('CAPA saved');
+    await loadAll();
+  }catch(e){toast(e.message)}
+}
+function viewCapa(id){
+  const r=records.find(x=>x.id===id),e=r.extra||{};
+  openModal(`<h3>📌 CAPA Details</h3>
+    <div class="grid two" style="gap:10px">
+      <div class="card"><b>CAPA Type</b><p>${pill(e.capa_type||'-')}</p></div>
+      <div class="card"><b>Source Department</b><p>${pill(e.source_department||r.area||'-')}</p></div>
+      <div class="card"><b>Title</b><p>${esc(r.title||'-')}</p></div>
+      <div class="card"><b>Owner</b><p>${esc(nameById(r.owner_id)||'Unassigned')}</p></div>
+      <div class="card"><b>Status</b><p>${pill(r.status||'-')}</p></div>
+      <div class="card"><b>Target Date</b><p>${esc(dateOnly(r.target_date)||'-')}</p></div>
+      <div class="card"><b>Root Cause</b><p>${esc(e.root_cause||'-')}</p></div>
+      <div class="card"><b>Corrective Action</b><p>${esc(e.corrective_action||'-')}</p></div>
+      <div class="card"><b>Preventive Action</b><p>${esc(e.preventive_action||'-')}</p></div>
+      <div class="card"><b>Effectiveness Check</b><p>${esc(e.effectiveness_check||'-')}</p></div>
+      <div class="card"><b>Evidence</b><p>${r.evidence_url?`<a class="link" href="${esc(r.evidence_url)}" target="_blank">Open Evidence</a>`:'-'}</p></div>
+    </div>
+    <div class="card" style="margin-top:10px"><b>Comments</b><p>${esc(r.comments||'-')}</p></div>
+    <div class="actions" style="margin-top:14px"><button class="btn" onclick="closeModal()">Close</button></div>`);
+}
+function exportCapa(){
+  const cols=['record_no','capa_type','title','source_department','owner','root_cause','corrective_action','preventive_action','effectiveness_check','status','target_date','evidence_url','comments'];
+  const rows=capaList().map(r=>{
+    const e=r.extra||{};
+    return {
+      record_no:r.record_no,
+      capa_type:e.capa_type,
+      title:r.title,
+      source_department:e.source_department||r.area,
+      owner:nameById(r.owner_id)||'Unassigned',
+      root_cause:e.root_cause,
+      corrective_action:e.corrective_action,
+      preventive_action:e.preventive_action,
+      effectiveness_check:e.effectiveness_check,
+      status:r.status,
+      target_date:r.target_date,
+      evidence_url:r.evidence_url,
+      comments:r.comments
+    };
+  });
+  download('capa_tracker_export.csv',toCsv(rows,cols));
+}
+
+function recognitionList(){
+  let list=records.filter(r=>r.module==='recognition_board');
+  const q=filters.q.toLowerCase();
+  if(q)list=list.filter(r=>{
+    const e=r.extra||{};
+    return [r.record_no,r.title,r.description,r.comments,e.employee_name,e.employee_department,e.achievement,e.recognition_type,e.recognized_by,e.impact_result,e.award_level].some(x=>String(x||'').toLowerCase().includes(q));
+  });
+  if(filters.area!=='All')list=list.filter(r=>(r.extra?.employee_department||r.area)===filters.area);
+  if(filters.status!=='All')list=list.filter(r=>r.status===filters.status);
+  return list;
+}
+function renderRecognitionBoard(){
+  const m=modules.recognition_board;
+  setTitle('Recognition Board','Recognize employees by name, department, achievement, impact and recognition type.');
+  const sts=m.statuses||[];
+  const list=recognitionList();
+  byId('view').innerHTML=`<div class="card">
+    <div class="toolbar">
+      <div>
+        <h3>Recognition Board</h3>
+        <p class="small">Record employee recognition with clear name, department, achievement, impact, award level and evidence.</p>
+      </div>
+      <div class="actions">
+        <button class="btn primary" ${canEdit()?'':'disabled'} onclick="openRecognitionForm()">+ New Recognition</button>
+        <button class="btn" onclick="exportRecognition()">Export CSV</button>
+      </div>
+    </div>
+
+    <div class="filters">
+      <input class="search" placeholder="Search employee, department, achievement, recognized by..." value="${esc(filters.q)}" oninput="filters.q=this.value;renderRecognitionBoard()">
+      <select onchange="filters.area=this.value;renderRecognitionBoard()">
+        <option>All</option>
+        ${areas.map(a=>`<option ${filters.area===a?'selected':''}>${a}</option>`).join('')}
+      </select>
+      <select onchange="filters.status=this.value;renderRecognitionBoard()">
+        <option>All</option>
+        ${sts.map(s=>`<option ${filters.status===s?'selected':''}>${s}</option>`).join('')}
+      </select>
+    </div>
+
+    <div class="grid kpis" style="margin-top:14px">
+      <div class="card"><div class="label">Total Recognition</div><div class="num">${list.length}</div></div>
+      <div class="card"><div class="label">Published</div><div class="num">${list.filter(r=>r.status==='Published').length}</div></div>
+      <div class="card"><div class="label">Approved</div><div class="num">${list.filter(r=>r.status==='Approved').length}</div></div>
+      <div class="card"><div class="label">Draft / Submitted</div><div class="num">${list.filter(r=>['Draft','Submitted'].includes(r.status)).length}</div></div>
+    </div>
+
+    <div class="tablewrap" style="margin-top:14px">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Employee Name</th>
+            <th>Department / Management</th>
+            <th>What did the person do?</th>
+            <th>Recognition Type</th>
+            <th>Recognition Date</th>
+            <th>Recognized By</th>
+            <th>Impact / Result</th>
+            <th>Award Level</th>
+            <th>Status</th>
+            <th>Evidence</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>${list.map(recognitionRow).join('')||'<tr><td colspan="12">No recognition records found.</td></tr>'}</tbody>
+      </table>
+    </div>
+  </div>`;
+}
+function recognitionRow(r){
+  const e=r.extra||{};
+  return `<tr>
+    <td>${esc(r.record_no)}</td>
+    <td><b>${esc(e.employee_name||'-')}</b></td>
+    <td>${pill(e.employee_department||r.area||'-')}</td>
+    <td>${esc(e.achievement||r.title||'-')}</td>
+    <td>${pill(e.recognition_type||'-')}</td>
+    <td>${esc(dateOnly(e.recognition_date||r.target_date))}</td>
+    <td>${esc(e.recognized_by||'-')}</td>
+    <td>${esc(e.impact_result||'-')}</td>
+    <td>${pill(e.award_level||'-')}</td>
+    <td>${pill(r.status||'-')}</td>
+    <td>${r.evidence_url?`<a class="link" target="_blank" href="${esc(r.evidence_url)}">Open</a>`:'-'}</td>
+    <td>
+      <div class="row-actions">
+        <button class="iconbtn" onclick="viewRecognition('${r.id}')">View</button>
+        <button class="iconbtn" ${canEdit()?'':'disabled'} onclick="openRecognitionForm('${r.id}')">Edit</button>
+        ${isAdmin()?`<button class="iconbtn" onclick="deleteRecord('${r.id}')">Delete</button>`:''}
+      </div>
+    </td>
+  </tr>`;
+}
+function openRecognitionForm(id=''){
+  const r=id?records.find(x=>x.id===id):{};
+  const e=r?.extra||{};
+  const sts=modules.recognition_board.statuses;
+  openModal(`<h3>${id?'Edit':'New'} Recognition</h3>
+    <div class="form-grid">
+      <div class="field"><label>Employee Name</label><input id="rec_employee_name" value="${esc(e.employee_name||'')}" placeholder="Employee full name"></div>
+      <div class="field"><label>Department / Management</label><select id="rec_employee_department"><option></option>${areas.map(a=>`<option ${e.employee_department===a||r.area===a?'selected':''}>${a}</option>`).join('')}</select></div>
+      <div class="field full"><label>What did the person do?</label><input id="rec_achievement" value="${esc(e.achievement||r.title||'')}" placeholder="Example: Completed PM plan before deadline"></div>
+      <div class="field"><label>Recognition Type</label><select id="rec_recognition_type"><option></option>${['Safety','Quality','Productivity','Cost Saving','Innovation','Maintenance Excellence','Compliance','Teamwork','Leadership','Customer Support','Other'].map(x=>`<option ${e.recognition_type===x?'selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label>Recognition Date</label><input id="rec_recognition_date" type="date" value="${esc(dateOnly(e.recognition_date||r.target_date)||today())}"></div>
+      <div class="field"><label>Recognized By</label><input id="rec_recognized_by" value="${esc(e.recognized_by||myProfile?.full_name||'')}" placeholder="Manager / Supervisor name"></div>
+      <div class="field"><label>Award Level</label><select id="rec_award_level"><option></option>${['Thank You','Monthly Recognition','Quarterly Recognition','Management Recognition','Special Award'].map(x=>`<option ${e.award_level===x?'selected':''}>${x}</option>`).join('')}</select></div>
+      <div class="field"><label>Status</label><select id="rec_status">${sts.map(s=>`<option ${r.status===s?'selected':''}>${s}</option>`).join('')}</select></div>
+      <div class="field"><label>Evidence URL</label><input id="rec_evidence_url" value="${esc(r.evidence_url||'')}" placeholder="Link to photo, document or proof"></div>
+      <div class="field full"><label>Impact / Result</label><textarea id="rec_impact_result" rows="3" placeholder="What was the business impact or result?">${esc(e.impact_result||'')}</textarea></div>
+      <div class="field full"><label>Comments</label><textarea id="rec_comments" rows="3">${esc(r.comments||'')}</textarea></div>
+    </div>
+    <div class="actions" style="margin-top:14px">
+      <button class="btn" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="saveRecognition('${id||''}')">Save Recognition</button>
+    </div>`);
+}
+async function saveRecognition(id=''){
+  try{
+    const employee=byId('rec_employee_name').value.trim();
+    const dept=byId('rec_employee_department').value;
+    const achievement=byId('rec_achievement').value.trim();
+    const status=byId('rec_status').value || 'Draft';
+    if(!employee || !dept || !achievement){
+      toast('Employee Name, Department and Achievement are required');
+      return;
+    }
+    const extra={
+      employee_name:employee,
+      employee_department:dept,
+      achievement:achievement,
+      recognition_type:byId('rec_recognition_type').value,
+      recognition_date:byId('rec_recognition_date').value||null,
+      recognized_by:byId('rec_recognized_by').value,
+      impact_result:byId('rec_impact_result').value,
+      award_level:byId('rec_award_level').value
+    };
+    const payload={
+      module:'recognition_board',
+      title:employee+' - '+achievement,
+      description:achievement,
+      area:dept,
+      priority:'Medium',
+      status:status,
+      progress:['Approved','Published','Archived'].includes(status)?100:0,
+      owner_id:null,
+      start_date:extra.recognition_date,
+      target_date:extra.recognition_date,
+      completion_date:['Approved','Published','Archived'].includes(status)?extra.recognition_date:null,
+      evidence_url:byId('rec_evidence_url').value,
+      comments:byId('rec_comments').value,
+      extra,
+      created_by:currentUser.id,
+      updated_by:currentUser.id,
+      source:extra.recognition_type||'Recognition',
+      category:extra.employee_department||'General',
+      related_ref:employee
+    };
+    const res=id?await sb.from('engineering_records').update(payload).eq('id',id):await sb.from('engineering_records').insert(payload);
+    if(res.error)throw res.error;
+    closeModal();
+    toast('Recognition saved');
+    await loadAll();
+  }catch(e){toast(e.message)}
+}
+function viewRecognition(id){
+  const r=records.find(x=>x.id===id),e=r.extra||{};
+  openModal(`<h3>🏆 Recognition Details</h3>
+    <div class="grid two" style="gap:10px">
+      <div class="card"><b>Employee Name</b><p>${esc(e.employee_name||'-')}</p></div>
+      <div class="card"><b>Department / Management</b><p>${pill(e.employee_department||r.area||'-')}</p></div>
+      <div class="card"><b>What did the person do?</b><p>${esc(e.achievement||r.title||'-')}</p></div>
+      <div class="card"><b>Recognition Type</b><p>${pill(e.recognition_type||'-')}</p></div>
+      <div class="card"><b>Recognition Date</b><p>${esc(dateOnly(e.recognition_date||r.target_date))}</p></div>
+      <div class="card"><b>Recognized By</b><p>${esc(e.recognized_by||'-')}</p></div>
+      <div class="card"><b>Impact / Result</b><p>${esc(e.impact_result||'-')}</p></div>
+      <div class="card"><b>Award Level</b><p>${pill(e.award_level||'-')}</p></div>
+      <div class="card"><b>Status</b><p>${pill(r.status||'-')}</p></div>
+      <div class="card"><b>Evidence</b><p>${r.evidence_url?`<a class="link" href="${esc(r.evidence_url)}" target="_blank">Open Evidence</a>`:'-'}</p></div>
+    </div>
+    <div class="card" style="margin-top:10px"><b>Comments</b><p>${esc(r.comments||'-')}</p></div>
+    <div class="actions" style="margin-top:14px"><button class="btn" onclick="closeModal()">Close</button></div>`);
+}
+function exportRecognition(){
+  const cols=['record_no','employee_name','employee_department','achievement','recognition_type','recognition_date','recognized_by','impact_result','award_level','status','evidence_url','comments'];
+  const rows=recognitionList().map(r=>{
+    const e=r.extra||{};
+    return {
+      record_no:r.record_no,
+      employee_name:e.employee_name,
+      employee_department:e.employee_department||r.area,
+      achievement:e.achievement||r.title,
+      recognition_type:e.recognition_type,
+      recognition_date:e.recognition_date||r.target_date,
+      recognized_by:e.recognized_by,
+      impact_result:e.impact_result,
+      award_level:e.award_level,
+      status:r.status,
+      evidence_url:r.evidence_url,
+      comments:r.comments
+    };
+  });
+  download('recognition_board_export.csv',toCsv(rows,cols));
+}
+
+function renderModule(mod){const m=modules[mod];setTitle(m.title||m.label,m.sub);const list=filteredRecords(mod), sts=m.statuses||commonStatuses;byId('view').innerHTML=`<div class="card"><div class="toolbar"><div><h3>${m.title||m.label}</h3><p class="small">Shared database records. Every change is stored in Audit Trail.</p></div><div class="actions"><button class="btn primary" ${canEdit()?'':'disabled'} onclick="openRecordForm('${mod}')">+ New Record</button><button class="btn" onclick="exportRecords('${mod}')">Export CSV</button></div></div><div class="filters"><input class="search" placeholder="Search title, machine, owner, source..." value="${esc(filters.q)}" oninput="filters.q=this.value;renderModule('${mod}')"><select onchange="filters.area=this.value;renderModule('${mod}')"><option>All</option>${areas.map(a=>`<option ${filters.area===a?'selected':''}>${a}</option>`)}</select><select onchange="filters.status=this.value;renderModule('${mod}')"><option>All</option>${sts.map(s=>`<option ${filters.status===s?'selected':''}>${s}</option>`)}</select><select onchange="filters.owner=this.value;renderModule('${mod}')"><option value="All">All owners</option>${profiles.map(p=>`<option value="${p.user_id}" ${filters.owner===p.user_id?'selected':''}>${esc(p.full_name||p.email)}</option>`)}</select></div><div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>No</th><th>Title</th><th>Area</th><th>Owner</th><th>Priority</th><th>Status</th><th>Progress</th><th>Target</th><th>Key Details</th><th>Actions</th></tr></thead><tbody>${list.map(r=>recordRow(r,mod)).join('')||'<tr><td colspan="10">No records found.</td></tr>'}</tbody></table></div></div>`}
+function recordRow(r,mod){const extra=r.extra||{};const detailKeys=(modules[mod].extras||[]).slice(0,3).map(f=>`${f[1]}: ${extra[f[0]]||''}`).filter(x=>!x.endsWith(': ')).join(' · ');return `<tr><td>${esc(r.record_no)}</td><td><b>${esc(r.title)}</b><div class="small">${esc(r.description||'').slice(0,120)}</div></td><td>${pill(r.area)}</td><td>${esc(profileName(r.owner_id))}</td><td>${pill(r.priority)}</td><td>${pill(r.status)}</td><td><div class="progress"><span style="width:${Number(r.progress||0)}%"></span></div><div class="small">${r.progress||0}%</div></td><td>${esc(dateOnly(r.target_date))}</td><td class="small">${esc(detailKeys||r.related_ref||'-')}</td><td><div class="row-actions"><button class="iconbtn" onclick="viewRecord('${r.id}')">View</button><button class="iconbtn" ${canEdit()?'':'disabled'} onclick="openRecordForm('${mod}','${r.id}')">Edit</button>${canApprove()?`<button class="iconbtn" onclick="quickClose('${r.id}')">Close</button>`:''}${isAdmin()?`<button class="iconbtn" onclick="deleteRecord('${r.id}')">Delete</button>`:''}</div></td></tr>`}
+function openRecordForm(mod,id){const m=modules[mod],r=id?records.find(x=>x.id===id):{},e=r?.extra||{},sts=m.statuses||commonStatuses;openModal(`<h3>${id?'Edit':'New'} ${m.title}</h3><div class="form-grid"><div class="field"><label>Title</label><input id="f_title" value="${esc(r.title||'')}"></div><div class="field"><label>Area</label><select id="f_area">${areas.map(a=>`<option ${r.area===a?'selected':''}>${a}</option>`)}</select></div><div class="field"><label>Owner</label><select id="f_owner"><option value="">Unassigned</option>${profiles.map(p=>`<option value="${p.user_id}" ${r.owner_id===p.user_id?'selected':''}>${esc(p.full_name||p.email)}</option>`)}</select></div><div class="field"><label>Priority</label><select id="f_priority">${priorities.map(p=>`<option ${r.priority===p?'selected':''}>${p}</option>`)}</select></div><div class="field"><label>Status</label><select id="f_status">${sts.map(s=>`<option ${r.status===s?'selected':''}>${s}</option>`)}</select></div><div class="field"><label>Progress %</label><input id="f_progress" type="number" min="0" max="100" value="${esc(r.progress??0)}"></div><div class="field"><label>Start Date</label><input id="f_start_date" type="date" value="${esc(dateOnly(r.start_date)||today())}"></div><div class="field"><label>Target Date</label><input id="f_target_date" type="date" value="${esc(dateOnly(r.target_date))}"></div><div class="field"><label>Completion Date</label><input id="f_completion_date" type="date" value="${esc(dateOnly(r.completion_date))}"></div><div class="field"><label>Evidence URL</label><input id="f_evidence_url" value="${esc(r.evidence_url||'')}"></div>${(m.extras||[]).map(f=>extraField(f,e[f[0]])).join('')}<div class="field full"><label>Description</label><textarea id="f_description" rows="4">${esc(r.description||'')}</textarea></div><div class="field full"><label>Comments</label><textarea id="f_comments" rows="3">${esc(r.comments||'')}</textarea></div></div><div class="actions" style="margin-top:14px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveRecord('${mod}','${id||''}')">Save</button></div>`)}
+function extraField(f,val){const [key,label,type,opts]=f;if(type==='select')return `<div class="field"><label>${label}</label><select id="x_${key}"><option></option>${opts.map(o=>`<option ${val===o?'selected':''}>${o}</option>`)}</select></div>`;return `<div class="field"><label>${label}</label><input id="x_${key}" type="${type||'text'}" value="${esc(val||'')}"></div>`}
+async function saveRecord(mod,id){try{const m=modules[mod];const extra={};(m.extras||[]).forEach(f=>extra[f[0]]=byId('x_'+f[0]).value);const payload={module:mod,title:byId('f_title').value,description:byId('f_description').value,area:byId('f_area').value,priority:byId('f_priority').value,status:byId('f_status').value,progress:Number(byId('f_progress').value||0),owner_id:byId('f_owner').value||null,start_date:byId('f_start_date').value||null,target_date:byId('f_target_date').value||null,completion_date:byId('f_completion_date').value||null,evidence_url:byId('f_evidence_url').value,comments:byId('f_comments').value,extra,created_by:currentUser.id,updated_by:currentUser.id,source:extra.action_source||extra.source_finding||extra.observation_type||extra.pm_type||extra.facility_type||extra.budget_type||extra.recognition_type||extra.part_code||'',category:extra.training_type||extra.pm_type||extra.risk_level||extra.criticality||extra.spare_criticality||extra.facility_type||extra.budget_type||extra.recognition_type||extra.employee_department||'General',related_ref:extra.related_machine||extra.related_machine_spare||extra.machine_name||extra.asset_code||extra.ccr_no||extra.capa_no||extra.location||extra.po_pr_no||extra.employee_name||extra.part_code||''};const res=id?await sb.from('engineering_records').update(payload).eq('id',id):await sb.from('engineering_records').insert(payload);if(res.error)throw res.error;closeModal();toast('Saved');await loadAll()}catch(e){toast(e.message)}}
+function viewRecord(id){const r=records.find(x=>x.id===id),m=modules[r.module],e=r.extra||{};openModal(`<h3>${esc(r.record_no)} · ${esc(r.title)}</h3><div class="grid" style="gap:10px"><div class="card"><b>Description</b><p>${esc(r.description||'-')}</p></div><div class="card"><b>Main Details</b><p>${pill(r.area)} ${pill(r.status)} ${pill(r.priority)}</p><p>Owner: ${esc(profileName(r.owner_id))}</p><p>Target: ${esc(dateOnly(r.target_date))} · Progress: ${r.progress}%</p></div><div class="card"><b>Module Details</b><div class="small">${Object.entries(e).map(([k,v])=>`<p><b>${esc(k)}:</b> ${esc(v||'-')}</p>`).join('')||'-'}</div>${r.evidence_url?`<p><a class="link" href="${esc(r.evidence_url)}" target="_blank">Open Evidence</a></p>`:''}</div></div><div class="actions" style="margin-top:14px"><button class="btn" onclick="closeModal()">Close</button></div>`)}
+async function quickClose(id){try{const {error}=await sb.from('engineering_records').update({status:'Closed',progress:100,completion_date:today(),reviewer_id:currentUser.id,updated_by:currentUser.id}).eq('id',id);if(error)throw error;toast('Closed');await loadAll()}catch(e){toast(e.message)}}
+async function deleteRecord(id){if(!confirm('Delete this record?'))return;try{const {error}=await sb.from('engineering_records').delete().eq('id',id);if(error)throw error;toast('Deleted');await loadAll()}catch(e){toast(e.message)}}
+function renderOee(){setTitle('Machine Performance & OEE','Calculate and monitor Availability, Performance, Quality and OEE.');let list=oeeRecords;const q=filters.q.toLowerCase();if(q)list=list.filter(r=>[r.machine_name,r.asset_code,r.shift,r.comments].some(x=>String(x||'').toLowerCase().includes(q)));if(filters.area!=='All')list=list.filter(r=>r.area===filters.area);const avg=list.length?Math.round(list.reduce((a,b)=>a+Number(b.oee||0),0)/list.length):0;byId('view').innerHTML=`<div class="card"><div class="toolbar"><div><h3>Machine Performance & OEE</h3><p class="small">OEE = Availability × Performance × Quality. Values are calculated automatically by the database.</p></div><div class="actions"><button class="btn primary" ${canEdit()?'':'disabled'} onclick="openOeeForm()">+ New OEE Record</button><button class="btn" onclick="exportOee()">Export CSV</button></div></div><div class="oee-box"><div class="mini"><span class="label">Records</span><b>${list.length}</b></div><div class="mini"><span class="label">Average OEE</span><b>${avg}%</b></div><div class="mini"><span class="label">Best OEE</span><b>${list.length?Math.max(...list.map(x=>Number(x.oee||0))):0}%</b></div><div class="mini"><span class="label">Low OEE</span><b>${list.length?Math.min(...list.map(x=>Number(x.oee||0))):0}%</b></div></div><div class="filters" style="margin-top:14px"><input placeholder="Search machine or asset code" value="${esc(filters.q)}" oninput="filters.q=this.value;renderOee()"><select onchange="filters.area=this.value;renderOee()"><option>All</option>${areas.map(a=>`<option ${filters.area===a?'selected':''}>${a}</option>`)}</select><span></span><span></span></div><div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>Date</th><th>Area</th><th>Machine</th><th>Asset</th><th>Planned</th><th>Downtime</th><th>Availability</th><th>Performance</th><th>Quality</th><th>OEE</th><th>Actions</th></tr></thead><tbody>${list.map(o=>`<tr><td>${esc(dateOnly(o.record_date))}</td><td>${pill(o.area)}</td><td><b>${esc(o.machine_name)}</b><div class="small">${esc(o.shift||'')}</div></td><td>${esc(o.asset_code||'')}</td><td>${o.planned_time_min} min</td><td>${o.downtime_min} min</td><td>${Number(o.availability||0)}%</td><td>${Number(o.performance||0)}%</td><td>${Number(o.quality||0)}%</td><td>${pill((Number(o.oee||0))+'%')}</td><td><button class="iconbtn" ${canEdit()?'':'disabled'} onclick="openOeeForm('${o.id}')">Edit</button>${isAdmin()?`<button class="iconbtn" onclick="deleteOee('${o.id}')">Delete</button>`:''}</td></tr>`).join('')||'<tr><td colspan="11">No OEE records found.</td></tr>'}</tbody></table></div></div>`}
+function openOeeForm(id){const o=id?oeeRecords.find(x=>x.id===id):{};openModal(`<h3>${id?'Edit':'New'} OEE Record</h3><div class="form-grid"><div class="field"><label>Area</label><select id="o_area">${areas.map(a=>`<option ${o.area===a?'selected':''}>${a}</option>`)}</select></div><div class="field"><label>Machine Name</label><input id="o_machine_name" value="${esc(o.machine_name||'')}"></div><div class="field"><label>Asset Code</label><input id="o_asset_code" value="${esc(o.asset_code||'')}"></div><div class="field"><label>Date</label><input id="o_record_date" type="date" value="${esc(dateOnly(o.record_date)||today())}"></div><div class="field"><label>Shift</label><input id="o_shift" value="${esc(o.shift||'')}"></div><div class="field"><label>Planned Time min</label><input id="o_planned_time_min" type="number" value="${esc(o.planned_time_min||0)}"></div><div class="field"><label>Downtime min</label><input id="o_downtime_min" type="number" value="${esc(o.downtime_min||0)}"></div><div class="field"><label>Ideal Cycle Time sec/unit</label><input id="o_ideal_cycle_time_sec" type="number" step="0.01" value="${esc(o.ideal_cycle_time_sec||0)}"></div><div class="field"><label>Total Count</label><input id="o_total_count" type="number" value="${esc(o.total_count||0)}"></div><div class="field"><label>Good Count</label><input id="o_good_count" type="number" value="${esc(o.good_count||0)}"></div><div class="field full"><label>Comments</label><textarea id="o_comments" rows="3">${esc(o.comments||'')}</textarea></div></div><div class="actions" style="margin-top:14px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveOee('${id||''}')">Save</button></div>`)}
+async function saveOee(id){try{const payload={area:byId('o_area').value,machine_name:byId('o_machine_name').value,asset_code:byId('o_asset_code').value,record_date:byId('o_record_date').value,shift:byId('o_shift').value,planned_time_min:Number(byId('o_planned_time_min').value||0),downtime_min:Number(byId('o_downtime_min').value||0),ideal_cycle_time_sec:Number(byId('o_ideal_cycle_time_sec').value||0),total_count:Number(byId('o_total_count').value||0),good_count:Number(byId('o_good_count').value||0),comments:byId('o_comments').value,created_by:currentUser.id};const res=id?await sb.from('machine_oee_records').update(payload).eq('id',id):await sb.from('machine_oee_records').insert(payload);if(res.error)throw res.error;closeModal();toast('OEE saved');await loadAll()}catch(e){toast(e.message)}}
+async function deleteOee(id){if(!confirm('Delete OEE record?'))return;try{const {error}=await sb.from('machine_oee_records').delete().eq('id',id);if(error)throw error;toast('Deleted');await loadAll()}catch(e){toast(e.message)}}
+
+function renderPendingApproval(){
+ setTitle('Account Pending Approval','Your account was created but still needs admin approval.');
+ byId('topActions').innerHTML=session?`<div class="userbox"><span class="badge">${esc(currentUser?.email||'')}</span><button class="btn danger" onclick="logout()">Logout</button></div>`:'';
+ byId('view').innerHTML=`<div class="card" style="max-width:850px"><h3>Waiting for Admin Approval</h3><p>Your account is currently <b>${esc(myProfile?.approval_status||'pending')}</b>. You cannot view engineering data until the admin approves your account.</p><div class="notice"><b>What happens next?</b><span>Admin opens User Approvals, selects your role, then clicks Approve. After approval, logout and login again.</span></div><p class="small">Email: ${esc(currentUser?.email||myProfile?.email||'')}</p><div class="actions" style="justify-content:flex-start;margin-top:14px"><button class="btn" onclick="loadAll()">Check Again</button><button class="btn danger" onclick="logout()">Logout</button></div></div>`;
+}
+
+function approvalSummary(){
+ const total=profiles.length;
+ const pending=profiles.filter(p=>(p.approval_status||'pending')==='pending').length;
+ const approved=profiles.filter(p=>p.approval_status==='approved').length;
+ const rejected=profiles.filter(p=>p.approval_status==='rejected').length;
+ return `<div class="grid kpis"><div class="card"><div class="label">Total Users</div><div class="num">${total}</div></div><div class="card"><div class="label">Pending Approval</div><div class="num" style="color:var(--warn)">${pending}</div></div><div class="card"><div class="label">Approved</div><div class="num" style="color:var(--ok)">${approved}</div></div><div class="card"><div class="label">Rejected</div><div class="num" style="color:var(--danger)">${rejected}</div></div></div>`;
+}
+
+function renderUserApprovals(){
+ setTitle('User Approvals','Approve new signups, reject unknown users, and assign access roles.');
+ if(!isAdmin()){byId('view').innerHTML='<div class="card"><h3>Restricted</h3><p>User Approvals is visible to approved Admin users only.</p></div>';return}
+ const pendingFirst=[...profiles].sort((a,b)=>{
+   const rank=x=>x==='pending'?0:x==='approved'?1:2;
+   return rank(a.approval_status||'pending')-rank(b.approval_status||'pending') || String(a.email||'').localeCompare(String(b.email||''));
+ });
+ byId('view').innerHTML=`${approvalSummary()}<div class="card"><div class="toolbar"><div><h3>Approval Queue</h3><p class="small">Any new signup stays pending until Admin approves it here.</p></div><button class="btn" onclick="loadAll()">Refresh</button></div><div class="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Current Role</th><th>Status</th><th>Choose Role</th><th>Actions</th></tr></thead><tbody>${pendingFirst.map((p,i)=>approvalRow(p,i)).join('')||'<tr><td colspan="6">No users found.</td></tr>'}</tbody></table></div></div>`;
+}
+
+function approvalRow(p,i){
+ const id=esc(p.user_id||p.id||'');
+ const email=esc(p.email||'');
+ const role=p.role||'viewer';
+ const status=p.approval_status||'pending';
+ return `<tr><td>${esc(p.full_name||'')}</td><td><b>${email}</b><br><span class="small">${esc(p.job_title||'')}</span></td><td><span class="pill ${roleClass(role)}">${esc(role)}</span></td><td>${pill(status)}</td><td><select id="approval_role_${i}">${roles.map(r=>`<option value="${r}" ${role===r?'selected':''}>${r}</option>`).join('')}</select></td><td><div class="row-actions"><button class="iconbtn" onclick="approveUser('${id}',${i})">Approve</button><button class="iconbtn" onclick="setUserPending('${id}')">Pending</button><button class="iconbtn" onclick="rejectUser('${id}')">Reject</button></div></td></tr>`;
+}
+
+async function approveUser(id,i){
+ try{
+   const role=byId('approval_role_'+i).value||'viewer';
+   const payload={approval_status:'approved',role,approved_at:new Date().toISOString(),approved_by:currentUser.id,is_active:true};
+   const {error}=await sb.from('profiles').update(payload).eq('user_id',id);
+   if(error)throw error;
+   toast('User approved');
+   await loadAll();
+ }catch(e){toast(e.message)}
+}
+
+async function rejectUser(id){
+ try{
+   const {error}=await sb.from('profiles').update({approval_status:'rejected',role:'viewer',approved_at:null,approved_by:currentUser.id,is_active:false}).eq('user_id',id);
+   if(error)throw error;
+   toast('User rejected');
+   await loadAll();
+ }catch(e){toast(e.message)}
+}
+
+async function setUserPending(id){
+ try{
+   const {error}=await sb.from('profiles').update({approval_status:'pending',role:'viewer',approved_at:null,approved_by:null,is_active:false}).eq('user_id',id);
+   if(error)throw error;
+   toast('User set to pending');
+   await loadAll();
+ }catch(e){toast(e.message)}
+}
+
+function renderUsers(){
+ setTitle('Users & Roles','Manage engineering users, access roles and approval status.');
+ byId('view').innerHTML=`<div class="card"><div class="toolbar"><div><h3>Users</h3><p class="small">Only approved users can access operational data. Admin can change roles and approval status.</p></div><div class="actions"><button class="btn" onclick="go('user_approvals')" ${isAdmin()?'':'disabled'}>Open User Approvals</button><button class="btn" onclick="loadAll()">Refresh</button></div></div><div class="tablewrap"><table><thead><tr><th>Name</th><th>Email</th><th>Job Title</th><th>Discipline</th><th>Role</th><th>Approval</th><th>Active</th><th>Actions</th></tr></thead><tbody>${profiles.map(p=>`<tr><td>${esc(p.full_name||'')}</td><td>${esc(p.email||'')}</td><td>${esc(p.job_title||'')}</td><td>${esc(p.discipline||'')}</td><td><span class="pill ${roleClass(p.role)}">${esc(p.role)}</span></td><td>${pill(p.approval_status||'pending')}</td><td>${p.is_active?'<span class="pill ok">Active</span>':'<span class="pill danger">Inactive</span>'}</td><td><button class="iconbtn" ${isAdmin()?'':'disabled'} onclick="openUserForm('${p.user_id}')">Edit</button></td></tr>`).join('')}</tbody></table></div></div>`;
+}
+
+function openUserForm(id){
+ const p=profiles.find(x=>x.user_id===id);
+ openModal(`<h3>Edit User</h3><div class="form-grid"><div class="field"><label>Full Name</label><input id="u_full_name" value="${esc(p.full_name||'')}"></div><div class="field"><label>Job Title</label><input id="u_job_title" value="${esc(p.job_title||'')}"></div><div class="field"><label>Discipline</label><select id="u_discipline"><option></option>${['Sterile','Non-Sterile','Electrical','Utility','Facility','HVAC','Water Treatment','Purified Water','Compressed Air','Boiler','Chiller','Fire Fighting','Civil / Building','Warehouse','QC Lab','QA','Production','Packaging','Admin Building','External Area','Planning','Accounts','Purchasing','Engineering Management','Maintenance Planning','Production Planning','Management','EHS'].map(x=>`<option ${p.discipline===x?'selected':''}>${x}</option>`)}</select></div><div class="field"><label>Role</label><select id="u_role">${roles.map(x=>`<option ${p.role===x?'selected':''}>${x}</option>`)}</select></div><div class="field"><label>Approval Status</label><select id="u_approval_status"><option value="pending" ${(p.approval_status||'pending')==='pending'?'selected':''}>pending</option><option value="approved" ${p.approval_status==='approved'?'selected':''}>approved</option><option value="rejected" ${p.approval_status==='rejected'?'selected':''}>rejected</option></select></div><div class="field"><label>Active</label><select id="u_active"><option value="true" ${p.is_active?'selected':''}>true</option><option value="false" ${!p.is_active?'selected':''}>false</option></select></div></div><div class="actions" style="margin-top:14px"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="saveUser('${id}')">Save</button></div>`);
+}
+
+async function saveUser(id){
+ try{
+  const status=byId('u_approval_status').value;
+  const payload={full_name:byId('u_full_name').value,job_title:byId('u_job_title').value,discipline:byId('u_discipline').value||null,role:byId('u_role').value,approval_status:status,is_active:byId('u_active').value==='true'};
+  if(status==='approved'){payload.approved_at=new Date().toISOString();payload.approved_by=currentUser.id}
+  if(status!=='approved'){payload.approved_at=null;payload.approved_by=null}
+  const {error}=await sb.from('profiles').update(payload).eq('user_id',id);
+  if(error)throw error;
+  closeModal();toast('User updated');await loadAll();
+ }catch(e){toast(e.message)}
+}
+function renderAudit(){setTitle('Audit Trail','Track who changed engineering records and when.');if(!canApprove()){byId('view').innerHTML='<div class="card"><h3>Restricted</h3><p>Audit Trail is visible to Supervisor, Manager and Admin roles only.</p></div>';return}byId('view').innerHTML=`<div class="card"><div class="toolbar"><div><h3>Latest Audit Logs</h3><p class="small">Insert, update and delete events are captured automatically by database triggers.</p></div><button class="btn" onclick="loadAll()">Refresh</button></div><div class="tablewrap"><table><thead><tr><th>Date</th><th>Table</th><th>Action</th><th>Record ID</th><th>Changed By</th><th>New Data</th></tr></thead><tbody>${auditLogs.map(l=>`<tr><td>${new Date(l.changed_at).toLocaleString()}</td><td>${esc(l.table_name)}</td><td>${pill(l.action)}</td><td>${esc(l.record_id||'')}</td><td>${esc(profileName(l.changed_by))}</td><td><div class="audit-json">${esc(JSON.stringify(l.new_data||l.old_data||{},null,2)).slice(0,900)}</div></td></tr>`).join('')||'<tr><td colspan="6">No audit records.</td></tr>'}</tbody></table></div></div>`}
+function renderSetup(missing){setTitle('Setup Guide','Run required SQL patches once, then deploy this ZIP.');byId('view').innerHTML=`<div class="card"><h3>${missing?'Configuration Missing':'System Setup'}</h3><p>This package includes the Engineering System modules, approvals, notifications, Facility Board, Spare Parts and Budget Tracker.</p><div class="notice"><b>Step 1 — Run SQL Patches</b><span>Open Supabase → SQL Editor → New Query → paste the required SQL patch files → Run.</span></div><div class="setup-code">Run the SQL patch files included in this ZIP.</div><div class="notice"><b>Step 2 — config.js</b><span>Use your existing Supabase Project URL and Publishable key. Never use service_role key.</span></div><div class="setup-code">window.GYPTO_CONFIG = {\n  SUPABASE_URL: "https://YOUR-PROJECT.supabase.co",\n  SUPABASE_KEY: "YOUR-PUBLISHABLE-KEY"\n};</div><div class="notice"><b>Step 3 — Deploy</b><span>Upload the full ZIP to Cloudflare Pages project gypto-engineering-board.</span></div></div>`}
+function openModal(html){byId('modal').innerHTML=html;byId('modalBackdrop').classList.remove('hidden')}function closeModal(){byId('modalBackdrop').classList.add('hidden')}byId('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeModal()});
+function toCsv(rows,cols){return [cols.join(',')].concat(rows.map(r=>cols.map(c=>`"${String(r[c]??'').replace(/"/g,'""')}"`).join(','))).join('\n')}function download(name,text){const blob=new Blob([text],{type:'text/csv'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click()}
+function exportRecords(mod){const cols=['record_no','module','title','area','owner','priority','status','progress','target_date','description','extra'];const rows=filteredRecords(mod).map(r=>({...r,owner:profileName(r.owner_id),extra:JSON.stringify(r.extra||{})}));download(mod+'_export.csv',toCsv(rows,cols))}
+function exportOee(){download('machine_oee_export.csv',toCsv(oeeRecords,['record_date','area','machine_name','asset_code','planned_time_min','downtime_min','availability','performance','quality','oee','comments']))}
+init();
+</script>
+</body>
+</html>
